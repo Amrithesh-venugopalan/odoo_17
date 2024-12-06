@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<template id="template" xml:space="preserve">
+    <t t-name="contact_followup_button.FollowupPopoverWidget">
+        <button t-on-mouseenter="showPopup" t-on-click="updateFollowupDate" t-on-mouseleave="closePopup" class="btn btn-primary">Follow up</button>
+    </t>
+    <t t-name="contact_followup_button.FollowupPopoverContent">
+        <div>
+            <table class="table table-borderless table-sm">
+                <br/>
+                <tr>
+                    <td><h5 t-out="props.record.data.last_followup_date" /></td>
+                </tr>
+            </table>
+        </div>
+    </t>
+</template>

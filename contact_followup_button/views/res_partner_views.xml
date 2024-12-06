@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_tree_with_followup" model="ir.ui.view">
+        <field name="name">res.partner.tree.followup</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='display_name']" position="after">
+                <field name="last_followup_date" invisible="1"/>
+                <widget name="followup_contact_widget"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_form_with_followup" model="ir.ui.view">
+        <field name="name">res.partner.form.followup</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group string="Follow-up Information">
+                    <field name="last_followup_date"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
